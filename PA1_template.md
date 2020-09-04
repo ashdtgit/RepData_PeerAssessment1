@@ -53,7 +53,7 @@ activity <- read.csv("./data/activity.csv", header = TRUE)
 ```
 
 ### Step 3. Basic summaries to see what is in the data
-Names of variables, top of the file, structure and summary
+Names of variables, top of the file, structure and summary.
 
 
 ```r
@@ -109,7 +109,7 @@ summary(activity)
 ## Question - What is mean total number of steps taken per day?
 
 ### Step 1. Calculate the total number of steps taken per day
-The below code is using summarise to group the data by date, and use sum to calculate total steps for each date
+The below code is using summarise to group the data by date, and use sum to calculate total steps for each date.
 
 ```r
 stepsbyday <- summarise(group_by(activity, date), TotalSteps = sum(steps))
@@ -152,7 +152,7 @@ The median of the total number of steps taken per day is:
 
 ### Step 1. Setup data to show the average daily activity pattern.
 
-The below code summarises the activity data by interval, giving the average steps across all days for each interval
+The below code summarises the activity data by interval, giving the average steps across all days for each interval.
 
 ```r
 aveStepsByInteval <- summarise(group_by(activity, interval), aveSteps = mean(steps, na.rm = TRUE))
@@ -161,7 +161,7 @@ aveStepsByInteval <- summarise(group_by(activity, interval), aveSteps = mean(ste
 
 ### Step 2.  Make a time series plot (type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-The below code uses the base plot system to plot the average steps per interval
+The below code uses the base plot system to plot the average steps per interval.
 
 ```r
 with(aveStepsByInteval, 
@@ -176,7 +176,7 @@ with(aveStepsByInteval,
 ### Step 3. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
 The below code uses which.max function to find which row contains the max average.
-Then puts the interval value from that row into a new variable
+Then puts the interval value from that row into a new variable.
 
 ```r
 which.max(aveStepsByInteval$aveSteps)
@@ -203,7 +203,7 @@ Interval **835**
 
 Summary can be used to show that in the activity data, 2304 NA's appear in the steps variable.
 But to make it easier to work with these NAs, the below code uses is.na to create a logical vector of the rows containing NA in the steps variable, 
-and then uses sum to count them into a new variable countNAs
+and then uses sum to count them into a new variable countNAs.
 
 
 ```r

@@ -249,7 +249,7 @@ activity &lt;- read.csv(&quot;./data/activity.csv&quot;, header = TRUE)
 
 <h3>Step 3. Basic summaries to see what is in the data</h3>
 
-<p>Names of variables, top of the file, structure and summary</p>
+<p>Names of variables, top of the file, structure and summary.</p>
 
 <pre><code class="r">names(activity)
 </code></pre>
@@ -295,7 +295,7 @@ activity &lt;- read.csv(&quot;./data/activity.csv&quot;, header = TRUE)
 
 <h3>Step 1. Calculate the total number of steps taken per day</h3>
 
-<p>The below code is using summarise to group the data by date, and use sum to calculate total steps for each date</p>
+<p>The below code is using summarise to group the data by date, and use sum to calculate total steps for each date.</p>
 
 <pre><code class="r">stepsbyday &lt;- summarise(group_by(activity, date), TotalSteps = sum(steps))
 </code></pre>
@@ -333,14 +333,14 @@ Breaks are set at 25 to make it a bit more readable, labels are added.</p>
 
 <h3>Step 1. Setup data to show the average daily activity pattern.</h3>
 
-<p>The below code summarises the activity data by interval, giving the average steps across all days for each interval</p>
+<p>The below code summarises the activity data by interval, giving the average steps across all days for each interval.</p>
 
 <pre><code class="r">aveStepsByInteval &lt;- summarise(group_by(activity, interval), aveSteps = mean(steps, na.rm = TRUE))
 </code></pre>
 
 <h3>Step 2.  Make a time series plot (type = &ldquo;l&rdquo;) of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)</h3>
 
-<p>The below code uses the base plot system to plot the average steps per interval</p>
+<p>The below code uses the base plot system to plot the average steps per interval.</p>
 
 <pre><code class="r">with(aveStepsByInteval, 
      plot(interval, aveSteps, type = &quot;l&quot;,
@@ -354,7 +354,7 @@ Breaks are set at 25 to make it a bit more readable, labels are added.</p>
 <h3>Step 3. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?</h3>
 
 <p>The below code uses which.max function to find which row contains the max average.
-Then puts the interval value from that row into a new variable</p>
+Then puts the interval value from that row into a new variable.</p>
 
 <pre><code class="r">which.max(aveStepsByInteval$aveSteps)
 </code></pre>
@@ -377,7 +377,7 @@ Then puts the interval value from that row into a new variable</p>
 
 <p>Summary can be used to show that in the activity data, 2304 NA&#39;s appear in the steps variable.
 But to make it easier to work with these NAs, the below code uses is.na to create a logical vector of the rows containing NA in the steps variable, 
-and then uses sum to count them into a new variable countNAs</p>
+and then uses sum to count them into a new variable countNAs.</p>
 
 <pre><code class="r">summary(activity)
 </code></pre>
